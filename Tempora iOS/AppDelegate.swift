@@ -4,7 +4,7 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-	lazy var window: UIWindow = UIWindow(frame: UIScreen.mainScreen().bounds)
+	lazy var window: UIWindow? = UIWindow(frame: UIScreen.mainScreen().bounds)
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		// Override point for customization after application launch.
@@ -12,12 +12,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		let idiom = UIDevice.currentDevice().userInterfaceIdiom
 		switch idiom {
 		case UIUserInterfaceIdiom.Phone:
-			let controller = ViewController()
-			window.rootViewController = controller
+			let tabBarController = UITabBarController()
+			let meController = MeViewController()
+			let meNavigationController = UINavigationController(rootViewController: meController)
+			meNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.Contacts, tag: 0)
+			tabBarController.setViewControllers([meNavigationController], animated: false)
+			tabBarController.selectedIndex = 0
+			window!.rootViewController = tabBarController
 
 		default:
 			abort()
 		}
+
+		window!.makeKeyAndVisible()
 
 		return true
 	}
@@ -51,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	lazy var applicationDocumentsDirectory: NSURL = {
 	    // The directory the application uses to store the Core Data store file. This code uses a directory named "com.gemstonia.Tempora_iOS" in the application's documents Application Support directory.
 	    let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-	    return urls[urls.count-1] as NSURL
+	    return urls[urls.count-1] as! NSURL
 	}()
 
 	lazy var managedObjectModel: NSManagedObjectModel = {
@@ -70,11 +77,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	    if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil, error: &error) == nil {
 	        coordinator = nil
 	        // Report any error we got.
-	        let dict = NSMutableDictionary()
+	        var dict = NSMutableDictionary()
 	        dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
 	        dict[NSLocalizedFailureReasonErrorKey] = failureReason
 	        dict[NSUnderlyingErrorKey] = error
-	        error = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
+	        error = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict as [NSObject : AnyObject])
 	        // Replace this with code to handle the error appropriately.
 	        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
 	        NSLog("Unresolved error \(error), \(error!.userInfo)")

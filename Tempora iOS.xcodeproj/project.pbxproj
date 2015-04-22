@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		A7FD61D41A080A2E000493E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FD61D31A080A2E000493E0 /* AppDelegate.swift */; };
 		A7FD61D71A080A2E000493E0 /* Tempora_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7FD61D51A080A2E000493E0 /* Tempora_iOS.xcdatamodeld */; };
-		A7FD61D91A080A2E000493E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FD61D81A080A2E000493E0 /* ViewController.swift */; };
+		A7FD61D91A080A2E000493E0 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FD61D81A080A2E000493E0 /* MeViewController.swift */; };
 		A7FD61DE1A080A2E000493E0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7FD61DD1A080A2E000493E0 /* Images.xcassets */; };
 		A7FD61E11A080A2E000493E0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7FD61DF1A080A2E000493E0 /* LaunchScreen.xib */; };
 		A7FD61ED1A080A2F000493E0 /* Tempora_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FD61EC1A080A2F000493E0 /* Tempora_iOSTests.swift */; };
@@ -30,7 +30,7 @@
 		A7FD61D21A080A2E000493E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7FD61D31A080A2E000493E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7FD61D61A080A2E000493E0 /* Tempora_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tempora_iOS.xcdatamodel; sourceTree = "<group>"; };
-		A7FD61D81A080A2E000493E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A7FD61D81A080A2E000493E0 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		A7FD61DD1A080A2E000493E0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A7FD61E01A080A2E000493E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A7FD61E61A080A2F000493E0 /* Tempora iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tempora iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,7 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				A7FD61D31A080A2E000493E0 /* AppDelegate.swift */,
-				A7FD61D81A080A2E000493E0 /* ViewController.swift */,
+				A7FD61D81A080A2E000493E0 /* MeViewController.swift */,
 				A7FD61DD1A080A2E000493E0 /* Images.xcassets */,
 				A7FD61DF1A080A2E000493E0 /* LaunchScreen.xib */,
 				A7FD61D51A080A2E000493E0 /* Tempora_iOS.xcdatamodeld */,
@@ -212,7 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7FD61D91A080A2E000493E0 /* ViewController.swift in Sources */,
+				A7FD61D91A080A2E000493E0 /* MeViewController.swift in Sources */,
 				A7FD61D71A080A2E000493E0 /* Tempora_iOS.xcdatamodeld in Sources */,
 				A7FD61D41A080A2E000493E0 /* AppDelegate.swift in Sources */,
 			);
@@ -282,7 +282,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -319,7 +319,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -332,7 +332,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Tempora iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -344,7 +344,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Tempora iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VERSIONING_SYSTEM = "apple-generic";

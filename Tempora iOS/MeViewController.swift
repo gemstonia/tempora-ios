@@ -1,9 +1,10 @@
 import UIKit
 
-class ViewController: UIViewController {
+class MeViewController: UITableViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		self.title = "Me"
 		// Do any additional setup after loading the view, typically from a nib.
 	}
 
